@@ -11,12 +11,16 @@ namespace layered_Architecture.Entity.Concrete
     {
             [Key]
 
-        public int blId { get; set; }
-        public string blTitle { get; set; }
-        public string blContent { get; set; }
-        public string blthumbNailİmage { get; set; }
-        public string blİmage { get; set; }
-        public DateTime blCreateDate { get; set; }
-        public bool blStatus { get; set; }
+        public int blogId { get; set; }
+        public string blogTitle { get; set; }
+        public string blogContent { get; set; }
+        public string blogthumbNailİmage { get; set; }
+        public string blogİmage { get; set; }
+        public DateTime blogCreateDate { get; set; }
+        public bool blogStatus { get; set; }
+        public int categoryId { get; set; }
+        public Category Category { get; set; }
+        public List<Comment> Comments { get; set; }
+
     }
 }

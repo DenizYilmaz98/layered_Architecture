@@ -11,10 +11,11 @@ namespace layered_Architecture.Entity.Concrete
     {
         [Key]
 
-        public int Id { get; set; }
-        public string caName { get; set; }
-        public string caDescription { get; set; }
-        public bool caStatus { get; set; }
+        public int categoryId { get; set; }
+        public string categoryName { get; set; }
+        public string categoryDescription { get; set; }
+        public bool categoryStatus { get; set; }
+        public List<Blog> Blogs { get; set; }
 
     }
 }

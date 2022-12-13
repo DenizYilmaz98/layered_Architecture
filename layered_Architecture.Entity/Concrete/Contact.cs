@@ -11,13 +11,13 @@ namespace layered_Architecture.Entity.Concrete
     {
         [Key]
 
-        public int conId { get; set; }
-        public string conUserName { get; set; }
-        public string conMail { get; set; }
-        public string conSubject { get; set; }
-        public string conMassege { get; set; }
-        public DateTime conDate { get; set; }
-        public bool conBool { get; set; }
+        public int contactId { get; set; }
+        public string contactUserName { get; set; }
+        public string contactMail { get; set; }
+        public string contactSubject { get; set; }
+        public string contactMassege { get; set; }
+        public DateTime contactDate { get; set; }
+        public bool contactBool { get; set; }
 
     }
 }

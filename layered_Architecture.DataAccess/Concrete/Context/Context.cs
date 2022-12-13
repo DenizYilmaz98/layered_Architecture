@@ -12,7 +12,7 @@ namespace layered_Architecture.DataAccess.Concrete.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=host.docker.internal,1434;database=CoreLayerDb;User Id=sa;Password=Pass1234") ;
+            optionsBuilder.UseSqlServer("server=host.docker.internal,1434;database=CoreLayerDb;User Id=sa;Password=Pass1234;") ;
             base.OnConfiguring(optionsBuilder);
         }
         public DbSet<About> abouts { get; set; }
@@ -20,7 +20,6 @@ namespace layered_Architecture.DataAccess.Concrete.Context
 
 
         public DbSet<Category> categories { get; set; }
-
         public DbSet<Comment> comments { get; set; }
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Writer> writers { get; set; }

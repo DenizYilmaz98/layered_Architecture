@@ -11,13 +11,13 @@ namespace layered_Architecture.Entity.Concrete
     {
         [Key]
 
-        public int abId { get; set; }
-        public string abDetails1 { get; set; }
-        public string abDetails2 { get; set; }
-        public string abİmage1 { get; set; }
-        public string abİmage2 { get; set; }
-        public string abMapLocation { get; set; }
-        public bool abStatus { get; set; }
+        public int aboutID { get; set; }
+        public string aboutDetails1 { get; set; }
+        public string aboutDetails2 { get; set; }
+        public string aboutİmage1 { get; set; }
+        public string aboutİmage2 { get; set; }
+        public string aboutMapLocation { get; set; }
+        public bool aboutStatus { get; set; }
 
     }
 }
