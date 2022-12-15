@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.DataAccess.Abstract
 {
-    public interface ICategoryDal:IGenericDal<Category>
+    public interface IWriterDal:IGenericDal<Writer>
     {
-       
     }
 }

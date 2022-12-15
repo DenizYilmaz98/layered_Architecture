@@ -1,4 +1,5 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.DataAccess.EntityFramework;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace layered_Architecture.BusinessLayer.Concrete
 {
     public class Category_Manager : ICategory_Service
     {
+        private readonly EfCategoryRepository _efcategoryRepository;
+
+        public Category_Manager()
+        {
+            _efcategoryRepository = new EfCategoryRepository();
+                
+        }
         public void CategoryAdd(Category category)
         {
-            throw new NotImplementedException();
+            _efcategoryRepository.Insert(category);
         }
 
         public void CategoryDelete(Category category)
         {
-            throw new NotImplementedException();
+            _efcategoryRepository.Delete(category);
         }
 
         public void CategoryUpdate(Category category)
         {
-            throw new NotImplementedException();
+            _efcategoryRepository.Update(category);
         }
 
         public Category GetById(int Id)
         {
-            throw new NotImplementedException();
+             return _efcategoryRepository.GetById(Id);
         }
 
         public List<Category> GetCategories()
         {
-            throw new NotImplementedException();
-        }
+            return _efcategoryRepository.GetListAll();
+                }
     }
 }

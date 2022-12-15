@@ -12,7 +12,7 @@ namespace layered_Architecture.DataAccess.Abstract
         void Update(T entity);
         void Delete(T entity);
         List<T> GetListAll();
-        T GetById(int Id);
+        T GetById(int Id);  
 
     }
 }

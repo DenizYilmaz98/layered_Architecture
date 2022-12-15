@@ -1,4 +1,5 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.DataAccess.Repository;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,8 @@ namespace layered_Architecture.BusinessLayer.Concrete
 {
     public class About_Manager : IAbout_Service
     {
-        private readonly IAbout_Service _about_Service;
-
-        public About_Manager(IAbout_Service about_Service )
-        {
-            _about_Service = about_Service;
-        }
+        GenericRepository<About> _genericRepository = new GenericRepository<About>();
+     
         public void AboutAdd(About about)
         {
           

@@ -9,11 +9,7 @@ namespace layered_Architecture.DataAccess.Abstract
 {
     public interface ICommentDal: IGenericDal<Comment>
     {
-        List<Comment> ListAllComment();
-        void AddComment(Comment commnet);
-        void UpdateComment(Comment commnet);
-        void DeleteComment(Comment commnet);
-        Comment GetComment(int id);
+      
 
 
     }
