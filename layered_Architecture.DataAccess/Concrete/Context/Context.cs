@@ -17,8 +17,6 @@ namespace layered_Architecture.DataAccess.Concrete.Context
         }
         public DbSet<About> abouts { get; set; }
         public DbSet<Blog> blogs { get; set; }
-
-
         public DbSet<Category> categories { get; set; }
         public DbSet<Comment> comments { get; set; }
         public DbSet<Contact> contacts { get; set; }

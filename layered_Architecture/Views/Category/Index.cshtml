@@ -1,0 +1,29 @@
+﻿@using layered_Architecture.Entity.Concrete
+@model List<Category>
+@{
+    Layout = null;
+}
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kategori Adı</th>
+        <th>Açıklaması</th>
+        <th>Durum</th>
+        <th>Sil</th>
+       
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+        
+           <td> @item.categoryId </td>
+           <td> @item.categoryName </td>
+           <td> @item.categoryDescription </td>
+           <td> @item.categoryStatus </td>
+           <td><a class="btn btn-danger" href="#">Detay</a></td>
+            <td> <a class="btn btn-warning" href="#">Sil </a></td>
+       
+</tr>
+    }
+</table>

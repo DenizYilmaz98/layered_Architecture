@@ -1,4 +1,5 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.DataAccess.Abstract;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,37 @@ namespace layered_Architecture.BusinessLayer.Concrete
 {
     public class Blog_Manager : IBlog_Service
     {
+        private readonly IBlogDal _blogDal;
+
+        public Blog_Manager(IBlogDal _blogDal)
+        {
+            this._blogDal = _blogDal;
+        }
         public void BLogAdd(Blog blog)
         {
-            throw new NotImplementedException();
-        }
+            _blogDal.Insert(blog);
+                }
 
         public void BlogDelete(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Delete(blog);
         }
 
         public void BlogUpdate(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(blog);
         }
 
         public List<Blog> GetBlogs()
         {
-            throw new NotImplementedException();
+            return _blogDal.GetListAll();
+
         }
 
         public Blog GetById(int Id)
         {
-            throw new NotImplementedException();
+
+            return _blogDal.GetById(Id);
         }
     }
 }

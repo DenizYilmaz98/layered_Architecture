@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.BusinessLayer.Abstract
 {
-    internal interface ICategory_Service
+    public interface ICategory_Service
     {
         List<Category> GetCategories();
         void CategoryAdd(Category category);

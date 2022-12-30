@@ -10,27 +10,27 @@ namespace layered_Architecture.DataAccess.Repository
 {
     public class BlogRepository : IBlogDal
     {
-        public void AddBlog(Blog blog)
+        public void Delete(Blog entity)
         {
             throw new NotImplementedException();
         }
 
-        public Blog getBlogId(int blogId)
+        public Blog GetById(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Blog> lisAllBlog()
+        public List<Blog> GetListAll()
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveBlog(Blog blog)
+        public void Insert(Blog entity)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateBlog(Blog blog)
+        public void Update(Blog entity)
         {
             throw new NotImplementedException();
         }
