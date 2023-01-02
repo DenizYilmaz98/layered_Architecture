@@ -32,16 +32,21 @@ namespace layered_Architecture.BusinessLayer.Concrete
             _blogDal.Update(blog);
         }
 
+        public List<Blog> GetBlogListWithCategories()
+        {
+            return _blogDal.GetListByCategories();
+        }
+
         public List<Blog> GetBlogs()
         {
             return _blogDal.GetListAll();
 
         }
 
-        public Blog GetById(int Id)
+        public List<Blog> GetBlogById(int Id)
         {
 
-            return _blogDal.GetById(Id);
+            return _blogDal.GetListAll(x => x.blogId == Id);
         }
     }
 }

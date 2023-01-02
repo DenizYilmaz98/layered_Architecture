@@ -9,10 +9,12 @@ namespace layered_Architecture.BusinessLayer.Abstract
 {
     public interface IBlog_Service
     {
-        List<Blog> GetBlogs();
+       
         void BLogAdd(Blog blog);
         void BlogUpdate(Blog blog);
         void BlogDelete(Blog blog);
-        Blog GetById(int Id);
+        List<Blog> GetBlogs();
+        List<Blog> GetBlogListWithCategories();
+        List<Blog> GetBlogById(int Id);
     }
 }

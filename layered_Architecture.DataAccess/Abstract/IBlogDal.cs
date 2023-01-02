@@ -9,6 +9,7 @@ namespace layered_Architecture.DataAccess.Abstract
 {
     public interface IBlogDal:IGenericDal<Blog>
     {
+        List<Blog> GetListByCategories ();
 
        
     }

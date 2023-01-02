@@ -10,8 +10,13 @@ namespace layered_Architecture.Controllers
 
         public IActionResult Index()
         {
-            var value = bm.GetBlogs();  
+            var value = bm.GetBlogListWithCategories();  
             return View(value);
+        }
+        public IActionResult BlogReadAll(int Id)
+        {
+            var gtbg = bm.GetBlogById(Id);
+            return View(gtbg);
         }
     }
 }
