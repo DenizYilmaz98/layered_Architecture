@@ -1,0 +1,7 @@
+﻿@model IEnumerable<layered_Architecture.Models.UserComment>
+@foreach (var item in Model)
+{
+   <p>@item.UserId</p>
+   <br/>
+   <p>@item.UserName</p>
+}

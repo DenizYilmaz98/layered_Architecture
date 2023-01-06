@@ -1,4 +1,5 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.DataAccess.Abstract;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,35 @@ namespace layered_Architecture.BusinessLayer.Concrete
 {
     public class Comment_Manager : IComment_Service
     {
+        private readonly ICommentDal _commentDal;
+
+        public Comment_Manager(ICommentDal commentDal)
+        {
+            _commentDal = commentDal;
+        }
         public void CommentAdd(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentDal.Insert(comment);
         }
 
         public void CommentDelete(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentDal.Delete(comment);
         }
 
         public void CommentUpdate(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentDal.Update(comment);
         }
 
         public Comment GetById(int Id)
         {
-            throw new NotImplementedException();
+            return _commentDal.GetById(Id);
         }
 
-        public List<Comment> GetComments()
+        public List<Comment> GetComments(int id)
         {
-            throw new NotImplementedException();
+          return _commentDal.GetListAll(x=>x.blogId==id);
         }
     }
 }

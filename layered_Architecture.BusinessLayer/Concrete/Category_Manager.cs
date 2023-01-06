@@ -42,6 +42,6 @@ namespace layered_Architecture.BusinessLayer.Concrete
         {
             return _categoryDal.GetListAll();
 
-                }
+        }
     }
 }
