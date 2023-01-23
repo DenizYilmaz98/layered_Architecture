@@ -10,7 +10,5 @@ namespace layered_Architecture.DataAccess.Abstract
     public interface ICommentDal: IGenericDal<Comment>
     {
       
-
-
     }
 }

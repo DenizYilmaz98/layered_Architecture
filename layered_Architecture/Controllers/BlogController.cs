@@ -2,7 +2,7 @@
 using layered_Architecture.DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace layered_Architecture.Controllers
+namespace layered_Architecture.UI.Controllers
 {
     public class BlogController : Controller
     {
@@ -15,6 +15,7 @@ namespace layered_Architecture.Controllers
         }
         public IActionResult BlogReadAll(int Id)
         {
+            ViewBag.i = Id;
             var gtbg = bm.GetBlogById(Id);
             return View(gtbg);
         }

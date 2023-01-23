@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace layered_Architecture.Controllers
+namespace layered_Architecture.UI.Controllers
 {
     public class DefaultController : Controller
     {

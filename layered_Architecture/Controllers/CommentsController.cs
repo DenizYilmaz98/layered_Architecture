@@ -2,11 +2,11 @@
 using layered_Architecture.DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace layered_Architecture.Controllers
+namespace layered_Architecture.UI.Controllers
 {
     public class CommentsController : Controller
     {
-      Comment_Manager cm = new Comment_Manager(new EfCommetRepository());
+      Comment_Manager cm = new Comment_Manager(new EfCommentRepository());
         public IActionResult Index()
         {
             return View();
@@ -17,7 +17,7 @@ namespace layered_Architecture.Controllers
         }
         public PartialViewResult CommentListByBlog(int id)
         {
-           var values= cm.GetComments(id);
+           var values= cm.GetList(id);
             return PartialView(values);
         }
     }

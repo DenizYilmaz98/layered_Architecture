@@ -2,9 +2,9 @@
 using layered_Architecture.DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace layered_Architecture.Controllers
+namespace layered_Architecture.UI.Controllers
 {
-    public class Category : Controller
+    public class CategoryController : Controller
     {
         Category_Manager cm = new Category_Manager(new EfCategoryRepository());
         public IActionResult Index()

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<layered_Architecture.Entity.Concrete.Comment>
+@{
+    Layout = null;
+}
+<style>
+    .box{
+    padding:10px;
+    background-color:darkgray;
+    color:white;
+    }
+   p {
+    color:white;
+    }
+</style>
+@foreach(var item in Model)
+{
+    <div class="box">
+   <h1>@item.commentTitle</h1>
+   <p> @item.commentUserName</p>
+    <hr/>
+   <p> @item.commentContent</p>
+   <p> @item.commentDate</p>
+</div>
+}

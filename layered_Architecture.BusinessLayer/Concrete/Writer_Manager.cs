@@ -1,4 +1,6 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.DataAccess.Abstract;
+using layered_Architecture.DataAccess.EntityFramework;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +12,36 @@ namespace layered_Architecture.BusinessLayer.Concrete
 {
     public class Writer_Manager : IWriter_Service
     {
-        public Writer GetById(int Id)
+        private readonly IWriterDal _writerDal;
+
+        public Writer_Manager(IWriterDal writerDal)
         {
-            throw new NotImplementedException();
+            _writerDal = writerDal;
+        }
+
+        public List<Writer> GetById(int Id)
+        {
+            return _writerDal.GetListAll(x=>x.writerId==Id);
         }
 
         public List<Writer> GetWriters()
         {
-            throw new NotImplementedException();
+            return _writerDal.GetListAll();
+                }
+
+        public void writerAdd(Writer writer)
+        {
+            _writerDal.Insert(writer);
         }
 
-        public void WriterAdd(Writer writer)
+        public void writerDelete(Writer writer)
         {
-            throw new NotImplementedException();
+            _writerDal.Delete(writer);
         }
 
-        public void WriterDelete(Writer writer)
+        public void writerUpdate(Writer writer)
         {
-            throw new NotImplementedException();
-        }
-
-        public void WriterUpdate(Writer writer)
-        {
-            throw new NotImplementedException();
+            _writerDal.Update(writer);
         }
     }
 }

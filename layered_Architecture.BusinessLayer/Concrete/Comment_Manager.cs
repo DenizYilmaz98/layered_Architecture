@@ -37,7 +37,7 @@ namespace layered_Architecture.BusinessLayer.Concrete
             return _commentDal.GetById(Id);
         }
 
-        public List<Comment> GetComments(int id)
+        public List<Comment> GetList(int id)
         {
           return _commentDal.GetListAll(x=>x.blogId==id);
         }

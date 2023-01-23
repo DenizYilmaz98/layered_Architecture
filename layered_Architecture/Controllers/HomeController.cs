@@ -1,8 +1,8 @@
-﻿using layered_Architecture.Models;
+﻿using layered_Architecture.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace layered_Architecture.Controllers
+namespace layered_Architecture.UI.Controllers
 {
     public class HomeController : Controller
     {

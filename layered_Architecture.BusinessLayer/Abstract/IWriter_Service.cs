@@ -10,9 +10,9 @@ namespace layered_Architecture.BusinessLayer.Abstract
     public interface IWriter_Service
     {
         List<Writer> GetWriters();
-        void WriterAdd(Writer writer);
-        void WriterUpdate(Writer writer);
-        void WriterDelete(Writer writer);
-        Writer GetById(int Id);
+        void writerAdd(Writer writer);
+        void writerUpdate(Writer writer);
+        void writerDelete(Writer writer);
+        List<Writer> GetById(int Id);
     }
 }

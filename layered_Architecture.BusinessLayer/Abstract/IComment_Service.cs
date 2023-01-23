@@ -9,7 +9,7 @@ namespace layered_Architecture.BusinessLayer.Abstract
 {
     public interface IComment_Service
     {
-        List<Comment> GetComments(int id);
+        List<Comment> GetList(int id);
         void CommentAdd(Comment comment);
         void CommentUpdate(Comment comment);
         void CommentDelete(Comment comment);

@@ -1,7 +1,7 @@
-﻿using layered_Architecture.Models;
+﻿using layered_Architecture.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace layered_Architecture.ViewComponents
+namespace layered_Architecture.UI.ViewComponents
 {
     public class CommentList:ViewComponent
     {

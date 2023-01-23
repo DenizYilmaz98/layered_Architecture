@@ -1,15 +1,18 @@
 ﻿@model IEnumerable<layered_Architecture.Entity.Concrete.Comment>
-<div class="comment-top">
-    <h4>Comments</h4>
-    <div class="media">
-        @foreach (var item in Model)
-        {
+<h1>Yorumlar</h1>
 
+<div class="comment-top">
+
+    @foreach (var item in Model)
+    {
+
+        <h4>Comments</h4>
+        <div class="media">
 
             <img src="~/web/images/t1.jpg" alt="" class="img-fluid" />
             <div class="media-body">
-                <h5 class="mt-0">@item.commentUserName</h5>
-                <h3>@item.commentTitle</h3>
+                <h5 class="mt-0">@item.commentTitle</h5>
+                <h3>@item.commentUserName</h3>
                 <p>@item.commentContent</p>
 
                 <div class="media mt-3">
@@ -17,15 +20,14 @@
                         <img src="~/web/images/t2.jpg" alt="" class="img-fluid" />
                     </a>
                     <div class="media-body">
-                        <h5 class="mt-0">@item.</h5>
-                        <h3>@item.commentTitle</h3>
+                        <h5 class="far fa-calendar-alt">@(((DateTime)item.commentDate).ToString("dd MMM yyyy"))</h5>
 
-                        <p>@item.commentContent</p>
                     </div>
                 </div>
 
             </div>
-        }
-    </div>
+        </div>
+    }
+
 
 </div>

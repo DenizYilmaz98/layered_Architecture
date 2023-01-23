@@ -1,4 +1,4 @@
-namespace layered_Architecture.Models
+namespace layered_Architecture.UI.Models
 {
     public class ErrorViewModel
     {
