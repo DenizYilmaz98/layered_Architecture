@@ -21,6 +21,7 @@ namespace layered_Architecture.DataAccess.Concrete.Context
         public DbSet<Comment> comments { get; set; }
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Writer> writers { get; set; }
+        public DbSet<writersCountry_City> writerscountry_city { get; set; }
 
     }
 }

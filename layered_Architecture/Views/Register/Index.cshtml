@@ -1,4 +1,5 @@
-﻿@{
+﻿@model layered_Architecture.Entity.Concrete.Writer
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/User_layout.cshtml";
 }
@@ -28,6 +29,13 @@
 								<div class="form-group col-md-6">
 										<label for="exampleInputPassword2 mb-2">Görsel Dosya Yolu</label>
 										<input type="password" class="form-control" name="writerImage" id="password2" placeholder="" required="">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon" > 
+											Yaşadığınız Ülke/Şehir
+										</span>
+										@Html.DropDownListFor(x=>x.CCID,(List<SelectListItem>)ViewBag.Country_Cities,new {@class ="form-control"})
+										
 									</div>
 								
 							</div>
