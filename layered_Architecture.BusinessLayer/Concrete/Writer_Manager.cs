@@ -1,6 +1,8 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.BusinessLayer.Validation_Rules;
 using layered_Architecture.DataAccess.Abstract;
 using layered_Architecture.DataAccess.EntityFramework;
+using layered_Architecture.DataAccess.Model;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -21,27 +23,41 @@ namespace layered_Architecture.BusinessLayer.Concrete
 
         public List<Writer> GetById(int Id)
         {
-            return _writerDal.GetListAll(x=>x.writerId==Id);
+            return _writerDal.GetListAll(x => x.writerId == Id);
         }
 
         public List<Writer> GetWriters()
         {
             return _writerDal.GetListAll();
-                }
+        }
 
-        public void writerAdd(Writer writer)
+        public void writerAdd(RegisterDtoModel registerModelDto)
         {
+            var writer = new Writer()
+            {
+                writerId = registerModelDto.writerId,
+                writerName = registerModelDto.writerName,
+                writerImage = registerModelDto.writerImage,
+                writerMail = registerModelDto.writerMail,
+                writerPassword = registerModelDto.writerPassword,
+                CCID = registerModelDto.CCID,
+                
+            };
             _writerDal.Insert(writer);
         }
+    
 
-        public void writerDelete(Writer writer)
-        {
-            _writerDal.Delete(writer);
-        }
 
-        public void writerUpdate(Writer writer)
-        {
-            _writerDal.Update(writer);
-        }
+
+            public void writerDelete(Writer writer)
+            {
+                _writerDal.Delete(writer);
+            }
+
+            public void writerUpdate(Writer writer)
+            {
+                _writerDal.Update(writer);
+              }
     }
 }
+

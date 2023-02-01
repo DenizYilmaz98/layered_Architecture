@@ -25,11 +25,9 @@ namespace layered_Architecture.UI.Controllers
             ViewBag.Country_Cities = SehirList;
             return View();
             }
-        [HttpPost] 
+        [HttpPost]
         public IActionResult Index(Writer p)
         {
-            var cc = cx.writerscountry_city.Where(m => m.CCID == p.CCID).FirstOrDefault();
-            p.writerscountry_city = cc;
             p.writerStatus = true;
             p.writerAbout = "Deneme";
             wm.writerAdd(p);

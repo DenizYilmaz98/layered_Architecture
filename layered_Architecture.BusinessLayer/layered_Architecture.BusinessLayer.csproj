@@ -20,8 +20,4 @@
     <ProjectReference Include="..\layered_Architecture.Entity\layered_Architecture.Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validation_Rules\" />
-  </ItemGroup>
-
 </Project>

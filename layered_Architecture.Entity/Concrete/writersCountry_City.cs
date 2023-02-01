@@ -12,7 +12,5 @@ namespace layered_Architecture.Entity.Concrete
         [Key]
         public int CCID { get; set; }
         public string Country_City { get; set; }
-        public List<Writer> writers { get; set; }
-
     }
 }
