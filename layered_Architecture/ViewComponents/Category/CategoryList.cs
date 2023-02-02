@@ -6,11 +6,15 @@ namespace layered_Architecture.UI.ViewComponents.Category
 {
     public class CategoryList:ViewComponent
     {
-        Category_Manager cm = new Category_Manager(new EfCategoryRepository());
+        private readonly Category_Manager _category_Manager;
+        public CategoryList( Category_Manager category_Manager)
+        {
+            _category_Manager = category_Manager;
+        }
 
         public IViewComponentResult Invoke()
         {
-            var values = cm.GetCategories();
+            var values = _category_Manager.GetCategories();
             return View(values);
         }
     }

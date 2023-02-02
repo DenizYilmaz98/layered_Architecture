@@ -2,7 +2,6 @@
 using layered_Architecture.BusinessLayer.Validation_Rules;
 using layered_Architecture.DataAccess.Abstract;
 using layered_Architecture.DataAccess.EntityFramework;
-using layered_Architecture.DataAccess.Model;
 using layered_Architecture.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -31,18 +30,9 @@ namespace layered_Architecture.BusinessLayer.Concrete
             return _writerDal.GetListAll();
         }
 
-        public void writerAdd(RegisterDtoModel registerModelDto)
+        public void writerAdd(Writer writer)
         {
-            var writer = new Writer()
-            {
-                writerId = registerModelDto.writerId,
-                writerName = registerModelDto.writerName,
-                writerImage = registerModelDto.writerImage,
-                writerMail = registerModelDto.writerMail,
-                writerPassword = registerModelDto.writerPassword,
-                CCID = registerModelDto.CCID,
-                
-            };
+           
             _writerDal.Insert(writer);
         }
     

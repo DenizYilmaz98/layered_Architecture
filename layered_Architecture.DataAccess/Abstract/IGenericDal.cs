@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.DataAccess.Abstract
 {
-    public interface IGenericDal<T> where T : class
+    public interface IGenericDal<T> where T : class,new()
     {
         void Insert(T entity);
         void Update(T entity);

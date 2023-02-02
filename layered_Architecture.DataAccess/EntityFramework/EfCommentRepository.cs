@@ -12,8 +12,10 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.DataAccess.EntityFramework
 {
-    public class EfCommentRepository:GenericRepository<Comment>,ICommentDal
+    public class EfCommentRepository : GenericRepository<Comment>, ICommentDal
     {
-       
+        public EfCommentRepository(Context context) : base(context)
+        {
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace layered_Architecture.BusinessLayer.Abstract
     public interface IWriter_Service
     {
         List<Writer> GetWriters();
-        void writerAdd(RegisterDtoModel registerrModelDto);
+        void writerAdd(Writer writer);
         void writerUpdate(Writer writer);
         void writerDelete(Writer writer);
         List<Writer> GetById(int Id);

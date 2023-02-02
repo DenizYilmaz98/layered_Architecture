@@ -1,4 +1,5 @@
 ﻿using layered_Architecture.BusinessLayer.Abstract;
+using layered_Architecture.DataAccess.Abstract;
 using layered_Architecture.DataAccess.Repository;
 using layered_Architecture.Entity.Concrete;
 using System;
@@ -11,12 +12,16 @@ namespace layered_Architecture.BusinessLayer.Concrete
 {
     public class About_Manager : IAbout_Service
     {
-        GenericRepository<About> _genericRepository = new GenericRepository<About>();
-     
+        private readonly IAboutDal _aboutDal;
+
+        public About_Manager(IAboutDal aboutDal)
+        {
+            _aboutDal = aboutDal;
+        }
         public void AboutAdd(About about)
         {
-          
-         
+
+            _aboutDal.Insert(about);
         }
 
         public void AboutDelete(About about)

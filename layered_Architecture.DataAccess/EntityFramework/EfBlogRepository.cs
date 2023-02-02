@@ -13,11 +13,16 @@ namespace layered_Architecture.DataAccess.EntityFramework
 {
     public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
     {
-        
+        private readonly Context _context;
+
+        public EfBlogRepository(Context context) : base(context)
+        {
+            _context = context;
+        }
+
         public List<Blog> GetListByCategories()
         {
-            using (var cx = new Context())
-                return cx.blogs.Include(c => c.Category).ToList(); 
+                return _context.blogs.Include(c => c.Category).ToList(); 
                 }
     }
 }

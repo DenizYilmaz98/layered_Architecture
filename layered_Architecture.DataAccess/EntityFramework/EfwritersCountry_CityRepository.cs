@@ -1,4 +1,5 @@
 ﻿using layered_Architecture.DataAccess.Abstract;
+using layered_Architecture.DataAccess.Concrete.Context;
 using layered_Architecture.DataAccess.Repository;
 using layered_Architecture.Entity.Concrete;
 using System;
@@ -9,7 +10,10 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.DataAccess.EntityFramework
 {
-    public class EfwritersCountry_CityRepository:GenericRepository<writersCountry_City>, IwritersCountry_CityDal
+    public class EfwritersCountry_CityRepository : GenericRepository<writersCountry_City>, IwritersCountry_CityDal
     {
+        public EfwritersCountry_CityRepository(Context context) : base(context)
+        {
+        }
     }
 }

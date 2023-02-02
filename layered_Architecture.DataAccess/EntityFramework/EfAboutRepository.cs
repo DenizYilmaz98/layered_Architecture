@@ -1,5 +1,6 @@
 ﻿
 using layered_Architecture.DataAccess.Abstract;
+using layered_Architecture.DataAccess.Concrete.Context;
 using layered_Architecture.DataAccess.Repository;
 using layered_Architecture.Entity.Concrete;
 using System;
@@ -10,7 +11,10 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.DataAccess.EntityFramework
 {
-    public class EfAboutRepository:GenericRepository<About>,IAboutDal
+    public class EfAboutRepository : GenericRepository<About>, IAboutDal
     {
+        public EfAboutRepository(Context context) : base(context)
+        {
+        }
     }
 }

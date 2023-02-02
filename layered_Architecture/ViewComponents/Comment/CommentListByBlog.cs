@@ -6,10 +6,14 @@ namespace layered_Architecture.UI.ViewComponents
 {
     public class CommentListByBlog:ViewComponent
     {
-        Comment_Manager cm = new Comment_Manager(new EfCommentRepository());
+        private readonly Comment_Manager _comment_Manager;
+        public CommentListByBlog(Comment_Manager comment_Manager)
+        {
+            _comment_Manager = comment_Manager;
+        }
         public IViewComponentResult Invoke(int id )
         {
-            var values=cm.GetList(id);
+            var values=_comment_Manager.GetList(id);
             return View(values);
 
         }

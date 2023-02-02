@@ -9,57 +9,57 @@ using System.Threading.Tasks;
 
 namespace layered_Architecture.DataAccess.Repository
 {
-    public class GenericRepository<T> : IGenericDal <T> where T : class
+    public class GenericRepository<T> : IGenericDal <T> where T : class, new()
     {
+        private readonly Context _context;
+
+        public GenericRepository(Context context)
+        {
+            _context = context;
+        }
         public void Delete(T entity)
         {
-            using var c = new Context();
 
-            c.Remove(entity);
-            c.SaveChanges();
+            _context.Remove(entity);
+            _context.SaveChanges();
 
         }
 
         public T GetById(int Id)
         {
-            using var c = new Context();
-            return c.Set<T>().Find(Id);
+            
+            return _context.Set<T>().Find(Id);
         }
 
         public List<T> GetListAll()
         {
-            using var c = new Context();
-            return c.Set<T>().ToList();
+            return _context.Set<T>().ToList();
 
         }
 
         public List<T> GetListAll(Expression<Func<T, bool>> filter)
         {
-            using var c = new Context();
 
-            return c.Set<T>().Where(filter).ToList();
+            return _context.Set<T>().Where(filter).ToList();
         }
 
         public void Insert(T entity)
         {
-            using var c = new Context();
 
-            c.Add(entity);
-            c.SaveChanges();
+            _context.Add(entity);
+            _context.SaveChanges();
         }
 
         public List<T> List(Expression<Func<T, bool>> filter)
         {
-            using var c = new Context();
-            return c.Set<T>().Where(filter).ToList();
+            return _context.Set<T>().Where(filter).ToList();
 
         }
 
         public void Update(T entity)
         {
-            using var c = new Context();
-            c.Update(entity);
-            c.SaveChanges();
+            _context.Update(entity);
+            _context.SaveChanges();
         }
     }
 }
