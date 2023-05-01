@@ -1,52 +1,70 @@
 ﻿@model layered_Architecture.Entity.Concrete.Writer
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/User_layout.cshtml";
 }
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-	<section class="main-content-w3layouts-agileits">
-		<div class="container">
-			<h3 class="tittle">Yazar Kayıt Sayfası</h3>
-				<div class="inner-sec">
-			<div class="login p-5 bg-light mx-auto mw-100">
-				<form  method="post">
-						<div class="form-row">
-								<div class="col-md-6 mb-3">
-										<label for="validationCustom01">Adınız / Soy Adınız</label>
+<script src="~/lib/jquery/dist/jquery.js"></script>
 
-									<input type="text" class="form-control" name="writerName" id="validationDefault01" placeholder="" required="">
-								</div>
-								<div class="col-md-6 mb-3">
-										<label for="validationCustom02">Mail Adresiniz</label>
-									<input type="email" class="form-control" name="writerMail" id="validationDefault02" placeholder="" required="">
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6">
-										<label for="exampleInputPassword1 mb-2">Şifreniz</label>
-									<input type="password" class="form-control" name="writerPassword" id="password1" placeholder="" required="">
-								</div>
-								<div class="form-group col-md-6">
-										<label for="exampleInputPassword2 mb-2">Görsel Dosya Yolu</label>
-										<input type="password" class="form-control" name="writerImage" id="password2" placeholder="" required="">
-									</div>
-									<div class="input-group">
-										<span class="input-group-addon" > 
-											Yaşadığınız Ülke/Şehir
-										</span>
-										@Html.DropDownListFor(x=> x.CCID,(List<SelectListItem>)ViewBag.Country_Cities,new {@class ="form-control"})
-										
-									</div>
-								
-							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
-								<p>
-									<a href="#">Şartları Okudum, Kabul Ediyorum..</a>
-								</p>
-						</form>
-		
-					</div>
-			</div>
-		</div>
-	</section>
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Yazar Kayıt Sayfası</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+                {
+
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">Adınız / Soy Adınız</label>
+                            @Html.TextBoxFor(x=>x.writerName)
+                            @Html.ValidationMessageFor(x=>x.writerName)
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom02">Mail Adresiniz</label>
+                            @Html.TextBoxFor(x=>x.writerMail)
+                            @Html.ValidationMessageFor(x=>x.writerMail)
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1 mb-2">Şifreniz</label>
+                            @Html.TextBoxFor(x=>x.writerPassword)
+                            @Html.ValidationMessageFor(x=>x.writerPassword)
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword2 mb-2">Görsel Dosya Yolu</label>
+                            @Html.TextBoxFor(x=>x.writerImage)
+                            @Html.ValidationMessageFor(x=>x.writerImage)
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+
+                                Yaşadığınız İl/İlçe </span>
+                            @Html.DropDownListFor(x=> x.CCID,	(SelectList)ViewBag.Country_Cities, "CCID", "Country_City"))
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+                    <p>
+                        <a href="#" id="btn-1">Şartları Okudum, Kabul Ediyorum..</a>
+                    </p>
+
+                }
+            </div>
+        </div>
+    </div>
+    <br />
+    <script>
+        $('#btn-1').click(function() {
+            swal("Eklediğiniz E-Mail adresinize haftalık mailler spam limitini aşmayacak şekilde atılacaktır, eğer tarafımızdan gelecek mailleri durdurmak isterseniz mail ileti dizisini durdurabilrisiniz.");
+
+        });
+    </script>
+</section>
 

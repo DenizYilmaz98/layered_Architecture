@@ -16,6 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\layered_Architecture.DataAccess\layered_Architecture.DataAccess.csproj" />
     <ProjectReference Include="..\layered_Architecture.Entity\layered_Architecture.Entity.csproj" />
   </ItemGroup>

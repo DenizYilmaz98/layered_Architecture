@@ -35,7 +35,7 @@ builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
 builder.Services.AddScoped<IContactDal, EfContactRepository>();
 builder.Services.AddScoped<IWriterDal, EfWriterRepository>();
-builder.Services.AddScoped<IwritersCountry_CityDal, EfwritersCountry_CityRepository>();
+builder.Services.AddScoped<IwritersCountry_CityDal, EfwritersCountry_CityRepository>();                 
 builder.Services.AddControllers();
 
 

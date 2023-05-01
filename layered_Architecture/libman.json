@@ -5,6 +5,18 @@
     {
       "library": "bootstrap@5.2.3",
       "destination": "wwwroot/bootstrap/"
+    },
+    {
+      "library": "jss@10.10.0",
+      "destination": "wwwroot/jss/"
+    },
+    {
+      "library": "jquery@3.6.3",
+      "destination": "wwwroot/jquery/",
+      "files": [
+        "jquery.min.js",
+        "jquery.js"
+      ]
     }
   ]
 }
